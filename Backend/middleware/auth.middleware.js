@@ -17,3 +17,4 @@ const protect = async (req, res, next) => {
 };
 
 module.exports = { protect };
+// This middleware checks for a valid JWT token in the Authorization header.

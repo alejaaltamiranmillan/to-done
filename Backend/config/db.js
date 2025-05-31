@@ -9,5 +9,9 @@ const connectDB = async () => {
     process.exit(1);
   }
 };
+// This function connects to the MongoDB database using Mongoose.
+
+
+
 
 module.exports = connectDB;
