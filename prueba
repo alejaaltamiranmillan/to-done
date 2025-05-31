@@ -1,1 +1,175 @@
-prueba
+```markdown
+# TaskMaster - Gestor de Tareas Personal
+
+![TaskMaster Screenshot](./screenshot.png) <!-- Si tienes una imagen de tu aplicación -->
+
+## Descripción del Proyecto
+TaskMaster es una aplicación web full stack para gestión de tareas personales desarrollada como proyecto académico. Permite a los usuarios organizar sus actividades diarias con funcionalidades básicas pero completas.
+
+## Características Principales
+- ✅ Creación, edición y eliminación de tareas
+- ✅ Marcado de tareas como completadas
+- ✅ Filtrado por estado (todas, completadas, pendientes)
+- ✅ Autenticación de usuarios
+- ✅ Persistencia de datos en base de datos
+
+## Tecnologías Utilizadas
+
+### Frontend
+- **React.js** - Biblioteca para construcción de interfaces
+- **Material-UI** - Componentes UI estilizados
+- **Axios** - Cliente HTTP para comunicación con backend
+- **React Router** - Manejo de navegación
+
+### Backend
+- **Node.js** - Entorno de ejecución JavaScript
+- **Express.js** - Framework para API REST
+- **MongoDB** - Base de datos NoSQL
+- **Mongoose** - ODM para MongoDB
+- **JWT** - Autenticación por tokens
+
+### DevOps
+- **Git** - Control de versiones
+- **Git Flow** - Estrategia de branching
+- **Docker** - Contenerización (opcional)
+
+## Arquitectura del Sistema
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│     Frontend    │ ←→ │     Backend     │ ←→ │     Database    │
+│  (React App)    │    │ (Node.js/Express)│    │    (MongoDB)    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+### Componentes Principales
+
+1. **Módulo de Autenticación**
+   - Registro/login de usuarios
+   - Generación/validación de JWT
+   - Protección de rutas
+
+2. **Módulo de Tareas**
+   - CRUD completo de tareas
+   - Relación usuario-tarea
+   - Filtrado y ordenamiento
+
+3. **Módulo de Interfaz**
+   - Componentes reutilizables
+   - Gestión de estado global
+   - Manejo de formularios
+
+## Historias de Usuario Implementadas
+
+1. **HU1** - Como usuario quiero registrarme e iniciar sesión para acceder a mis tareas
+2. **HU2** - Como usuario quiero crear nuevas tareas con título y descripción
+3. **HU3** - Como usuario quiero marcar tareas como completadas
+4. **HU4** - Como usuario quiero filtrar mis tareas por estado
+
+## Instalación y Ejecución
+
+### Requisitos Previos
+- Node.js v14+
+- MongoDB Atlas o local
+- NPM/Yarn
+
+### Pasos de Instalación
+
+1. Clonar el repositorio:
+```bash
+git clone https://github.com/tu-usuario/taskmaster.git
+cd taskmaster
+```
+
+2. Instalar dependencias:
+```bash
+cd frontend && npm install
+cd ../backend && npm install
+```
+
+3. Configurar variables de entorno:
+Crear un archivo `.env` en el backend con:
+```
+MONGO_URI=tu_cadena_conexion_mongodb
+JWT_SECRET=tu_secreto_jwt
+PORT=5000
+```
+
+4. Ejecutar la aplicación:
+```bash
+# En una terminal (backend)
+cd backend && npm start
+
+# En otra terminal (frontend)
+cd frontend && npm start
+```
+
+## Estructura de Directorios
+
+```
+taskmaster/
+├── backend/               # Código del servidor
+│   ├── config/            # Configuraciones
+│   ├── controllers/       # Lógica de controladores
+│   ├── models/            # Modelos de datos
+│   ├── routes/            # Definición de rutas
+│   └── server.js          # Punto de entrada
+│
+├── frontend/              # Aplicación React
+│   ├── public/            # Assets públicos
+│   └── src/               # Código fuente
+│       ├── components/    # Componentes UI
+│       ├── context/       # Contextos React
+│       ├── pages/         # Vistas principales
+│       └── App.js         # Componente raíz
+│
+├── docs/                  # Documentación
+└── README.md              # Este archivo
+```
+
+## Git Flow
+
+El proyecto sigue la estrategia Git Flow:
+
+- `main` - Rama de producción
+- `develop` - Rama de integración
+- `feature/*` - Ramas para nuevas funcionalidades
+- `hotfix/*` - Ramas para correcciones urgentes
+
+Ejemplo de flujo de trabajo:
+```bash
+git checkout -b feature/nueva-funcionalidad develop
+# Realizar commits
+git checkout develop
+git merge --no-ff feature/nueva-funcionalidad
+```
+
+## Contribución
+
+1. Haz fork del proyecto
+2. Crea tu rama de feature (`git checkout -b feature/AmazingFeature`)
+3. Haz commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Haz push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## Licencia
+Distribuido bajo la licencia MIT. Ver `LICENSE` para más información.
+
+## Contacto
+Tu Nombre - [@tu_twitter](https://twitter.com/tu_twitter) - tu@email.com
+
+Enlace del Proyecto: [https://github.com/tu-usuario/taskmaster](https://github.com/tu-usuario/taskmaster)
+``` 
+
+Este README.md incluye:
+1. Descripción general del proyecto
+2. Tecnologías usadas (frontend, backend, DevOps)
+3. Diagrama de arquitectura
+4. Historias de usuario implementadas
+5. Instrucciones de instalación
+6. Estructura de directorios
+7. Flujo de trabajo Git
+8. Sección de contribución
+9. Información de licencia y contacto
+
+Puedes personalizarlo con tus datos reales y añadir capturas de pantalla de tu aplicación. ¿Necesitas que ajuste alguna sección en particular?
