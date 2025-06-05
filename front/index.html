@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container" id="authContainer" style="display: flex;">
+        <div class="auth-form">
+            <h2>📝 TaskMaster</h2>
+            <form id="authForm">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                </div>
+                <div class="auth-buttons">
+                    <button type="submit" id="loginBtn" class="btn-primary">Iniciar Sesión</button>
+                    <button type="button" id="registerBtn" class="btn-secondary">Registrarse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="mainContainer" style="display: none;">
+        <header>
+            <div class="header-top">
+                <h1>📋 TaskMaster</h1>
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </button>
+            </div>
+            <div class="task-input">
+                <input type="text" id="taskInput" placeholder="¿Qué necesitas hacer?">
+                <button id="addTaskBtn">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="task-stats">
+            <span id="totalTasks">Total: 0</span>
+            <span id="completedTasks">Completadas: 0</span>
+            <span id="pendingTasks">Pendientes: 0</span>
+        </div>
+
+        <div class="task-filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="pending">Pendientes</button>
+            <button class="filter-btn" data-filter="completed">Completadas</button>
+        </div>
+
+        <div class="tasks-container">
+            <h2>Tareas Pendientes</h2>
+            <ul id="pendingList" class="task-list"></ul>
+            
+            <h2>Tareas Completadas</h2>
+            <ul id="completedList" class="task-list completed-list"></ul>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+            <i class="fas fa-tasks"></i>
+            <p>No hay tareas pendientes</p>
+        </div>
+    </div>
+
+    <div class="notifications-container"></div>
+    <script src="sript.js"></script>
+</body>
+</html>
